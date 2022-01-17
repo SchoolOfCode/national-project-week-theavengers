@@ -1,7 +1,8 @@
-import {Button, Container, Col, Row} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+// import {Button, Container, Col, Row} from 'react-bootstrap'
+// import {Link} from 'react-router-dom'
 
 import Form from '../Form'
+import Nav from '../Nav'
 
 
 
@@ -11,16 +12,16 @@ function App() {
 
   return (
     <div className="App">
-    
-      <nav>
-        <Link to="/">home</Link>
+    <Nav/>
+      <>
+        {/* <Link to="/">home</Link>
         <br/>
         <Link to="/Reflections">reflections</Link>
         <br/>  
-        <Button>Create</Button>
-      </nav>
+        <Button>Create</Button> */}
+      </>
 
-      <Form isHidden={true}/>
+      <Form isHidden={false}/>
 
       
       

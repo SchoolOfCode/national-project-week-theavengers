@@ -2,6 +2,7 @@ import {Button, Container, Col, Row} from 'react-bootstrap'
 import './App.css';
 import {useEffect, useState, useRef} from "react";
 import Quotes from "../Quotes"
+import FeelingsCard from '../FeelingsCards';
 
 //const api_url ="https://zenquotes.io/api/quotes/";
 // async function getapi(url)
@@ -21,7 +22,6 @@ function App() {
   const [quote, setQuote] = useState("")
   const latestQuote = useRef(quote)
 
-
   useEffect(()=>{
     async function getQuoteOfTheDay(){
       const response = await fetch("https://inspiring-quotes.p.rapidapi.com/random?author=Albert", {
@@ -37,14 +37,17 @@ function App() {
     }
     getQuoteOfTheDay()
   }, [])
-  
+
   return (
   
     <div className="App">
       <Row>
         <Col> 
-        <Quotes quote = {latestQuote.current}> </Quotes>
+        <Quotes quote={latestQuote.current} />
         </Col>
+      </Row>
+      <Row>
+        <FeelingsCard />
       </Row>
     </div>
   );

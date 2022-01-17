@@ -1,7 +1,7 @@
 import {Button, Container, Col, Row} from 'react-bootstrap'
-
 import './App.css';
 import {useEffect, useState, useRef} from "react";
+import Quotes from "../Quotes"
 
 //const api_url ="https://zenquotes.io/api/quotes/";
 // async function getapi(url)
@@ -32,14 +32,20 @@ function App() {
         }})
       const data = await response.json();
       setQuote(latestQuote.current = data.quote)
+      console.log(latestQuote.current)
       return data
     }
     getQuoteOfTheDay()
   }, [])
   
   return (
+  
     <div className="App">
-      
+      <Row>
+        <Col> 
+        <Quotes quote = {latestQuote.current}> </Quotes>
+        </Col>
+      </Row>
     </div>
   );
 }

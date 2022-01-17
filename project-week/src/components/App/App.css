@@ -38,14 +38,10 @@
 }
 
 .col {
-  height: 100vh;
-  width: 33%;
   border: 2px solid green
 }
 
 .row {
-  width: 100vw;
-  height: 200px;
   border: 2px solid blue
 
 }

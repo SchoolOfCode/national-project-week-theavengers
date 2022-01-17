@@ -1,6 +1,8 @@
 import {Button, Container, Col, Row} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 
+import Form from '../Form'
+
 
 
 import './App.css';
@@ -17,6 +19,8 @@ function App() {
         <br/>  
         <Button>Create</Button>
       </nav>
+
+      <Form isHidden={true}/>
 
       
       

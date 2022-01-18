@@ -1,6 +1,6 @@
 import {Navbar, Container, Nav, Button} from  'react-bootstrap'
 // import {useState} from 'react'
-import {NavLink, BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import './index.css'
 
 function NavBar({formShow}) {

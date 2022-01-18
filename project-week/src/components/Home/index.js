@@ -1,4 +1,4 @@
-import {Button, Container, Col, Row} from 'react-bootstrap'
+import {Col, Row} from 'react-bootstrap'
 import Quotes from "../Quotes"
 import FeelingsCard from '../FeelingsCards';
 import Form from '../Form'
@@ -18,7 +18,7 @@ function Home({formHide, formShow, formState}) {
         "method": "GET",
         "headers": {
           "x-rapidapi-host": "inspiring-quotes.p.rapidapi.com",
-          "x-rapidapi-key": "66e15a0c63msh64f1ed7a108ca24p11da89jsn1c2cd45ce893"
+          "x-rapidapi-key": process.env.REACT_APP_KEY
         }})
       const data = await response.json();
       setQuote(latestQuote.current = data.quote)

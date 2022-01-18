@@ -1,3 +1,8 @@
+// import {Button, Container, Col, Row} from 'react-bootstrap'
+// import {Link} from 'react-router-dom'
+
+import Form from '../Form'
+import Nav from '../Nav'
 import {Button, Container, Col, Row} from 'react-bootstrap'
 import './App.css';
 import {useEffect, useState, useRef} from "react";
@@ -41,6 +46,19 @@ function App() {
   return (
   
     <div className="App">
+    <Nav/>
+      <>
+        {/* <Link to="/">home</Link>
+        <br/>
+        <Link to="/Reflections">reflections</Link>
+        <br/>  
+        <Button>Create</Button> */}
+      </>
+
+      <Form isHidden={false}/>
+
+      
+      
       <Row>
         <Col> 
         <Quotes quote={latestQuote.current} />

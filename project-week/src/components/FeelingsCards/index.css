@@ -1,0 +1,147 @@
+* {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+.box3 {
+  width: 20%;
+  margin: 50px auto;
+  background-color: rgba(0, 191, 182, 0.7);
+  padding: 20px;
+  text-align: center;
+  font-weight: 900;
+  color: white;
+  font-family: arial;
+  position: absolute;
+  border-radius: 15px;
+  font-size: 0.75em;
+  overflow-wrap: anywhere;
+  animation: left-right-reverse 10s linear infinite;
+  animation-direction: alternate-reverse;
+  box-shadow: 3px 3px 5px rgba(12, 144, 154, 0.6);
+  display: flex;
+  flex-direction: column;
+}
+
+.box4 {
+    width: 20%;
+    margin: 50px auto;
+    background-color: rgba(0, 191, 182, 0.7);
+    padding: 20px;
+    text-align: center;
+    font-weight: 900;
+    color: white;
+    font-family: arial;
+    position: absolute;
+    border-radius: 15px;
+    font-size: 0.75em;
+    overflow-wrap: anywhere;
+    animation: top-bottom-reverse 10s linear infinite;
+    animation-direction: alternate-reverse;
+    box-shadow: 3px 3px 5px rgba(12, 144, 154, 0.6);
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .box3:nth-child(2n) {
+      background-color: red;
+  }
+
+.box3:hover, .box4:hover {
+    animation-play-state: paused;
+    transform: scale(1);
+    box-shadow:
+    0 0 15px rgba(83, 244, 247, 0.7),
+    0 0  30px rgba(149, 225, 238, 0.7),
+    0 0  45px rgba(235, 249, 249, 0.7);
+    background-color: rgba(0, 191, 182, 1);
+    z-index: 1
+}
+
+/* speech bubble 7 */
+
+.sb7:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid rgba(0, 191, 182, 0.7);
+  border-right: 10px solid transparent;
+  border-top: 10px solid rgba(0, 191, 182, 0.7);
+  border-bottom: 10px solid transparent;
+  left: 20px;
+  bottom: -20px;
+}
+
+/* .sb7:after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid #fff;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #fff;
+  border-bottom: 10px solid transparent;
+  left: 24px;
+  bottom: -13px;
+} */
+  
+/* speech bubble 8 */
+
+.sb8:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid rgba(0, 191, 182, 0.7);
+  border-top: 10px solid rgba(0, 191, 182, 0.7);
+  border-bottom: 10px solid transparent;
+  right: 20px;
+  bottom: -20px;
+}
+
+/* .sb8:after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #fff;
+  border-top: 10px solid #fff;
+  border-bottom: 10px solid transparent;
+  right: 24px;
+  bottom: -13px;
+} */
+
+.timestamp {
+    font-size: 80%;
+    font-family: 'Courier New', Courier, monospace;
+    opacity: 0.6;
+    align-self: flex-end;
+    padding-top: 7%;
+}
+  
+@keyframes left-right-reverse
+{
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 80%;
+    }
+    
+}
+
+@keyframes top-bottom-reverse
+{
+    0%, 100% {
+        bottom: 0;
+      }
+      50% {
+        bottom: 60%;
+      }
+}
+  
+

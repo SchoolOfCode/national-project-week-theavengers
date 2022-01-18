@@ -21,11 +21,19 @@ import FeelingsCard from '../FeelingsCards';
 
 
 
-
 function App() {
 
   const [quote, setQuote] = useState("")
+  const [isFormHidden, setFormHidden] = useState(true)
   const latestQuote = useRef(quote)
+
+  function formHide(){
+    setFormHidden(true)
+  }
+
+  function formShow(){
+    setFormHidden(false)
+  }
 
   useEffect(()=>{
     async function getQuoteOfTheDay(){
@@ -46,7 +54,7 @@ function App() {
   return (
   
     <div className="App">
-    <Nav/>
+    <Nav formShow={formShow}/>
       <>
         {/* <Link to="/">home</Link>
         <br/>
@@ -55,7 +63,9 @@ function App() {
         <Button>Create</Button> */}
       </>
 
-      <Form isHidden={true}/>
+
+      <Form isHidden={isFormHidden} onHide={formHide}/>
+
 
       
       

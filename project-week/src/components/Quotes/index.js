@@ -13,7 +13,7 @@ function Quotes({quote}){
   </Row>
 </Container>
         
-    
+  
     </div>
 };
 

@@ -6,10 +6,11 @@ import Nav from '../Nav'
 import {useEffect, useState, useRef} from "react";
 
 
-function Home() {
+function Home({formHide, formShow, formState}) {
 
   const [quote, setQuote] = useState("")
   const latestQuote = useRef(quote)
+
 
   useEffect(()=>{
     async function getQuoteOfTheDay(){
@@ -28,9 +29,9 @@ function Home() {
   }, [])
 
 return <>
-  <Nav/>
+  <Nav formShow={formShow}/>
 
-<Form isHidden={false}/> 
+<Form isHidden={formState} onHide={formHide} onShow={formShow}/> 
       <Row>
         <Col> 
           <Quotes quote={latestQuote.current} />

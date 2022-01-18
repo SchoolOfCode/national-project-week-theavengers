@@ -3,7 +3,7 @@ import {Navbar, Container, Nav, Button} from  'react-bootstrap'
 import {NavLink, BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import './index.css'
 
-function NavBar() {
+function NavBar({formShow}) {
 return (
 <Navbar bg="primary" variant="dark">
     <Container>
@@ -14,7 +14,7 @@ return (
     <NavLink id="RouterNavLink" className={isActive => "nav-link" + (!isActive ? " unselected" : "")} 
           to="/Reflections">Reflections</NavLink>
 
-      <Button variant="success">Create</Button>
+      <Button variant="success" onClick={formShow}>Create</Button>
     </Nav>
     </Container>
 </Navbar>

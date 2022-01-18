@@ -1,0 +1,13 @@
+.nav-link {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: rgba(255, 255, 255, 1);
+
+}
+
+.btn-success {
+    background-color: #6DFD0D;
+}

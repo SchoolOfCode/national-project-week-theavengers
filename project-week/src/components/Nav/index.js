@@ -1,6 +1,7 @@
 import {Navbar, Container, Nav, Button} from  'react-bootstrap'
 // import {useState} from 'react'
-// import {Link} from 'react-router-dom'
+import {NavLink, BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import './index.css'
 
 function NavBar() {
 return (
@@ -8,9 +9,12 @@ return (
     <Container>
     <Navbar.Brand href="/">Caught in my Feelings</Navbar.Brand>
     <Nav className="me-auto">
-      <Nav.Link href="/">Home</Nav.Link>
-      <Nav.Link href="/Reflections">Reflections</Nav.Link>
-      <Button>Create</Button>
+    <NavLink id="RouterNavLink" className={isActive => "nav-link" + (!isActive ? " unselected" : "")} 
+          to="/">Home</NavLink>
+    <NavLink id="RouterNavLink" className={isActive => "nav-link" + (!isActive ? " unselected" : "")} 
+          to="/Reflections">Reflections</NavLink>
+
+      <Button variant="success">Create</Button>
     </Nav>
     </Container>
 </Navbar>

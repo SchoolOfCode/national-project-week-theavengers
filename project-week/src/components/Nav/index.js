@@ -2,7 +2,7 @@ import {Navbar, Container, Nav, Button} from  'react-bootstrap'
 // import {useState} from 'react'
 // import {Link} from 'react-router-dom'
 
-function NavBar() {
+function NavBar({formShow}) {
 return (
 <Navbar bg="primary" variant="dark">
     <Container>
@@ -10,7 +10,7 @@ return (
     <Nav className="me-auto">
       <Nav.Link href="/">Home</Nav.Link>
       <Nav.Link href="/Reflections">Reflections</Nav.Link>
-      <Button>Create</Button>
+      <Button onClick={formShow}>Create</Button>
     </Nav>
     </Container>
 </Navbar>

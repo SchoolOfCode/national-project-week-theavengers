@@ -1,16 +1,20 @@
 import {Col, Row} from 'react-bootstrap'
 import Quotes from "../Quotes"
 import FeelingsCard from '../FeelingsCards';
-import Form from '../Form'
+import CreatePost from '../CreatePost'
 import Nav from '../Nav'
 import {useEffect, useState, useRef} from "react";
 
 
-function Home({formHide, formShow, formState}) {
+function Home() {
 
   const [quote, setQuote] = useState("")
   const latestQuote = useRef(quote)
 
+  const [showForm, setShowForm] = useState(false)
+
+  const formHide = () => setShowForm(false)
+  const formShow = () => setShowForm(true)
 
   useEffect(()=>{
     async function getQuoteOfTheDay(){
@@ -29,9 +33,8 @@ function Home({formHide, formShow, formState}) {
   }, [])
 
 return <>
-  <Nav formShow={formShow}/>
-
-<Form isHidden={formState} onHide={formHide} onShow={formShow}/> 
+  <Nav showCreatePostModal={formShow}/>
+  <CreatePost show={showForm} onHide={formHide}/>
       <Row>
         <Col> 
           <Quotes quote={latestQuote.current} />

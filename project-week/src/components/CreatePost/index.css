@@ -9,4 +9,13 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    gap: 1em;
+}
+
+#modal{
+    max-width: 600px;
+}
+
+p{
+    padding: 2em 0.5em;
 }

@@ -1,7 +1,7 @@
 import express from "express";
 //Import models..
 const router = express.Router();
-import {createPost,getPostById, getPosts, deletePost } from '../models/posts.js'
+import {createPost,getPostById, getPosts, deletePostById } from '../models/posts.js'
 
 /* GET posts listing. */
 router.get("/", function (req, res) {
@@ -32,7 +32,7 @@ router.delete("/:id", function(req,res){
   //Delete post by Id
   const id = Number(req.params.id);
   // delete the post with that id
-  const deletedPost = deletePost(id);
+  const deletedPost = deletePostById(id);
   // respond with { success: Boolean, payload: deletedRecipe }
   res.json({ success: true, payload: deletedPost }); 
 })

@@ -4,7 +4,7 @@ import FeelingsCard from '../FeelingsCards';
 import Form from '../Form'
 import Nav from '../Nav'
 import {useEffect, useState, useRef} from "react";
-
+import './index.css'
 
 function Home({formHide, formShow, formState}) {
 
@@ -21,7 +21,7 @@ function Home({formHide, formShow, formState}) {
           "x-rapidapi-key": "66e15a0c63msh64f1ed7a108ca24p11da89jsn1c2cd45ce893"
         }})
       const data = await response.json();
-      setQuote(latestQuote.current = data.quote)
+      setQuote(latestQuote.current = data)
       console.log(latestQuote.current)
       return data
     }
@@ -32,14 +32,14 @@ return <>
   <Nav formShow={formShow}/>
 
 <Form isHidden={formState} onHide={formHide} onShow={formShow}/> 
-      <Row>
-        <Col> 
-          <Quotes quote={latestQuote.current} />
-        </Col>
-      </Row>
-      <Row>
-        <FeelingsCard classes="sb7 box3"/>
-      </Row>
+    <Container className="main">
+          <Quotes quote={latestQuote.current.quote} author={latestQuote.current.author}/>
+        <FeelingsCard classes="sb7 box4"/>
+        <FeelingsCard classes="sb7 box4"/>
+        <FeelingsCard classes="sb7 box4"/>
+        <FeelingsCard classes="sb7 box4"/>
+        <FeelingsCard classes="sb7 box4"/>
+      </Container>
       </>
 }
 

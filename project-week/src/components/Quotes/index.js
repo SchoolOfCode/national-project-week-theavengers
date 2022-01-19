@@ -1,18 +1,17 @@
 import React from "react";
 import {Container, Row, Col} from "react-bootstrap"
+import './index.css'
 
-
-function Quotes({quote}){
-    return <div>
-        <Container >
-  <Row>
-    <Col>1 of 3</Col>
-    <Col xs={6}>2 of 3 (wider)<h2 id = "quotebox">{quote}</h2> </Col>
-    <Col>3 of 3
-    </Col>
-  </Row>
-</Container>
-        
+function Quotes({quote, author}){
+    return <div className="quote-page">
+      <Row>
+      </Row>
+      <Row>
+      <Col id="quotebox">
+            <h3>{quote}</h3> 
+            <p className="author">- {author}</p>
+          </Col>
+      </Row>
   
     </div>
 };

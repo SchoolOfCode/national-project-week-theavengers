@@ -1,13 +1,36 @@
 .nav-link {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgb(255, 255, 255);
     text-decoration: none;
+    font-weight: 500;
+    font-size: 125%;
 }
 
 .nav-link:hover {
-    color: rgba(255, 255, 255, 1);
+    color: rgb(244, 217, 217);
+    background-color: var(--copper-crayola)
+
+}
+
+.navbar-dark .navbar-nav .nav-link {
+     color: rgb(255, 255, 255);
 
 }
 
 .btn-success {
-    background-color: #6DFD0D;
+    background-color: var(--copper-crayola);
+    border-color: var(--copper-crayola);
+    font-weight: 500;
+}
+
+.btn-success:hover {
+    background-color: var(--copper-crayola);
+    border-color: var(--copper-crayola);
+    color: var(--glaucous)
+
+}
+
+
+.bg-primary {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--glaucous), var(--bs-bg-opacity))!important;
 }

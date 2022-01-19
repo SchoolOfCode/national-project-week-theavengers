@@ -4,14 +4,17 @@ import {useState} from 'react';
 
 const maxCharSize = 240;
 
-function CreatePost({show, onHide}){
+function CreatePost({show, onHide, onSubmit}){
 
   const [charsRem, setCharsRem] = useState(240)
   const [charsRemHide, setCharsRemHide] = useState(true)
+  const [inputText, setInputText] = useState("")
 
 function handleChange(e){
+  console.log(e.target.value)
   setCharsRemHide(false)
   setCharsRem(getCharsRemaining(e.target.value))
+  setInputText(e.target.value)
 }
 
 function getCharsRemaining(text){
@@ -52,7 +55,10 @@ function handleSelect(e){
           <Button variant="secondary" onClick={onHide}>
             Close
           </Button>
-          <Button variant="primary" onClick={onHide}>
+          <Button variant="primary" onClick={()=>{
+            onSubmit(inputText)
+            onHide()
+          }}>
             Submit
           </Button>
         </Modal.Footer>

@@ -21,7 +21,10 @@ router.get("/:id",async function(req,res){
 
 router.post("/",async function(req,res){
   //Create new post..
-  const data = req.body;
+  const data = {
+    text: req.body.text,
+    timestamp: new Date().toLocaleString()
+  }
   // add the new post to the posts
   createPost(data);
   // respond with { success: Boolean, payload: data }

@@ -30,14 +30,16 @@ function Home() {
       console.log(latestQuote.current)
       return data
     }
-    async function getPosts(){
-      const response = await fetch("http://localhost:3000/posts");
-      const data = await response.json();
-      setPosts(data.payload)
-    }
+
     getPosts()
     getQuoteOfTheDay()
   }, [])
+
+async function getPosts(){
+    const response = await fetch("http://localhost:3000/posts");
+    const data = await response.json();
+    setPosts(data.payload)
+  }
 
 async function submitPost(text){
   console.log(text)
@@ -51,6 +53,7 @@ async function submitPost(text){
       "body": JSON.stringify({text: text})
   })
   console.log(response)
+  getPosts()
 }
 
 

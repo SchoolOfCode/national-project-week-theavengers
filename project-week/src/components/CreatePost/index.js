@@ -11,7 +11,6 @@ function CreatePost({show, onHide, onSubmit}){
   const [inputText, setInputText] = useState("")
 
 function handleChange(e){
-  console.log(e.target.value)
   setCharsRemHide(false)
   setCharsRem(getCharsRemaining(e.target.value))
   setInputText(e.target.value)

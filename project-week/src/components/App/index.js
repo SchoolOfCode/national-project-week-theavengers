@@ -4,7 +4,6 @@
 import './App.css';
 import Home from '../Home'
 import {Route, Routes} from 'react-router-dom'
-import {useState} from 'react'
 
 //const api_url ="https://zenquotes.io/api/quotes/";
 // async function getapi(url)
@@ -19,24 +18,15 @@ import {useState} from 'react'
 
 function App() {
 
-  const [isFormHidden, setFormHidden] = useState(true)
 
-  function formHide(){
-    setFormHidden(true)
-  }
-
-  function formShow(){
-    setFormHidden(false)
-  }
   return (
     <div className="App">
       <>
         <Routes>
         <Route
           path="/"
-          element={<Home formHide={formHide} formShow={formShow} formState={isFormHidden}/>}
+          element={<Home/>}
         />
-        {console.log(isFormHidden)}
 
       </Routes>
       </>

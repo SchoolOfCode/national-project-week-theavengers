@@ -17,6 +17,7 @@
 }
 
 .btn-success {
+
     background-color: var(--copper-crayola);
     border-color: var(--copper-crayola);
     font-weight: 500;
@@ -34,3 +35,4 @@
     --bs-bg-opacity: 1;
     background-color: rgba(var(--glaucous), var(--bs-bg-opacity))!important;
 }
+

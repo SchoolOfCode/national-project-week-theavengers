@@ -1,16 +1,20 @@
-import {Button, Container, Col, Row} from 'react-bootstrap'
+import {Col, Row} from 'react-bootstrap'
 import Quotes from "../Quotes"
 import FeelingsCard from '../FeelingsCards';
-import Form from '../Form'
+import CreatePost from '../CreatePost'
 import Nav from '../Nav'
 import {useEffect, useState, useRef} from "react";
 import './index.css'
 
-function Home({formHide, formShow, formState}) {
+function Home() {
 
   const [quote, setQuote] = useState("")
   const latestQuote = useRef(quote)
 
+  const [showForm, setShowForm] = useState(false)
+
+  const formHide = () => setShowForm(false)
+  const formShow = () => setShowForm(true)
 
   useEffect(()=>{
     async function getQuoteOfTheDay(){
@@ -18,7 +22,7 @@ function Home({formHide, formShow, formState}) {
         "method": "GET",
         "headers": {
           "x-rapidapi-host": "inspiring-quotes.p.rapidapi.com",
-          "x-rapidapi-key": "66e15a0c63msh64f1ed7a108ca24p11da89jsn1c2cd45ce893"
+          "x-rapidapi-key": process.env.REACT_APP_KEY
         }})
       const data = await response.json();
       setQuote(latestQuote.current = data)
@@ -29,17 +33,16 @@ function Home({formHide, formShow, formState}) {
   }, [])
 
 return <>
-  <Nav formShow={formShow}/>
 
-<Form isHidden={formState} onHide={formHide} onShow={formShow}/> 
+  <Nav showCreatePostModal={formShow}/>
+  <CreatePost show={showForm} onHide={formHide}/>
     <Container className="main">
-          <Quotes quote={latestQuote.current.quote} author={latestQuote.current.author}/>
-        <FeelingsCard classes="sb7 box4"/>
-        <FeelingsCard classes="sb7 box4"/>
-        <FeelingsCard classes="sb7 box4"/>
-        <FeelingsCard classes="sb7 box4"/>
-        <FeelingsCard classes="sb7 box4"/>
-      </Container>
+                    <Quotes quote={latestQuote.current.quote} author={latestQuote.current.author}/>
+
+  
+        <FeelingsCard classes="sb7 box3"/>
+   
+   </Container>
       </>
 }
 

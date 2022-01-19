@@ -1,7 +1,6 @@
 
 import './index.css'
 
-
 function FeelingsCard({classes}) {
 
     return <div>

@@ -1,0 +1,12 @@
+
+    Setup database on heroku/elephantSQL...
+    Install and configure postgres with pg package, create pool etc...
+    Add config vars and install dotenv
+    Write some scripts to post some fake data to database
+    Setup request handlers for get/post requests..
+    Write database query functions for receiving and posting data to db..
+    Link up the functions with request handlers
+    Host on heroku, instruct heroku to build react app and serve build folder
+        -- package.json contains "heroku-postbuild", which should be detected and run by heroku when deployed and build our app...
+        -- app.js is setup to serve files from "../project-week/build"
+    Create fetch requests on client side that talk to our server..

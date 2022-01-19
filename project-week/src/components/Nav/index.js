@@ -1,24 +1,32 @@
 import {Navbar, Container, Nav, Button} from  'react-bootstrap'
 // import {useState} from 'react'
-import {NavLink, BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {NavLink} from 'react-router-dom'
 import './index.css'
 
-function NavBar({formShow}) {
+function NavBar({showCreatePostModal}) {
+
+
 return (
 <Navbar bg="primary" variant="dark">
     <Container>
+
     <Navbar.Brand href="/">
   {/* <img src={Logo} width="180" height="180" style={{position: 'absolute'}} alt="" /> */}
     </Navbar.Brand>
+
     <Nav className="me-auto">
+
     <NavLink id="RouterNavLink" className={isActive => "nav-link" + (!isActive ? " unselected" : "")} 
           to="/">Home</NavLink>
     <NavLink id="RouterNavLink" className={isActive => "nav-link" + (!isActive ? " unselected" : "")} 
           to="/Reflections">Reflections</NavLink>
 
+
     </Nav>
-    <Button variant="success" onClick={formShow}>Create</Button>
+
+    <Button onClick={showCreatePostModal} variant="success">Create</Button>
 
     </Container>
 

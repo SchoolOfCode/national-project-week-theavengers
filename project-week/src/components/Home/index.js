@@ -36,14 +36,13 @@ function Home() {
   }, [])
 
 async function getPosts(){
-    const response = await fetch("http://localhost:3000/posts");
+    const response = await fetch("/posts");
     const data = await response.json();
     setPosts(data.payload)
   }
 
 async function submitPost(text){
-  console.log(text)
-  const response = await fetch("http://localhost:3000/posts",
+  const response = await fetch("/posts",
   {
       "method": "POST",
       headers: {

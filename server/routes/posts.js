@@ -1,6 +1,7 @@
 import express from "express";
 //Import models..
 const router = express.Router();
+import {createPost,getPostById, getPosts, deletePost } from '../models/posts.js'
 
 /* GET posts listing. */
 router.get("/", function (req, res) {
@@ -24,7 +25,7 @@ router.post("/", function(req,res){
   // add the new post to the posts
   createPost(data);
   // respond with { success: Boolean, payload: data }
-  res.json({ success: true, payload: data });
+  res.json({ success: true, payload: data});
 })
 
 router.delete("/:id", function(req,res){

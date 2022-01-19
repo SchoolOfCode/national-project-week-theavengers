@@ -13,7 +13,6 @@ const pool = new pg.Pool({
 
 
 export default function query(text, params) {
-    console.log(pool)
     return pool.query(text, params)
 }
 

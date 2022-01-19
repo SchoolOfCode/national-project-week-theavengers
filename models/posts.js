@@ -13,7 +13,7 @@ export async function getPostById(requestId){
 }
 //Create post..
 export async function createPost(post){
-    const data = await query(`INSERT INTO PostTable(text,timestamp) VALUES ($1, $2), [post.text, post.timestamp]`)
+    const data = await query(`INSERT INTO PostTable(text,timestamp) VALUES ($1, $2)`, [post.text, post.timestamp])
     return data.rows;
 }
 export async function deletePostById(requestId){

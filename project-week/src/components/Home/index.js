@@ -9,6 +9,7 @@ import './index.css'
 function Home() {
 
   const [quote, setQuote] = useState("")
+  const [posts, setPosts] = useState([])
   const latestQuote = useRef(quote)
 
   const [showForm, setShowForm] = useState(false)
@@ -29,18 +30,42 @@ function Home() {
       console.log(latestQuote.current)
       return data
     }
+
+    getPosts()
     getQuoteOfTheDay()
   }, [])
+
+async function getPosts(){
+    const response = await fetch("http://localhost:3000/posts");
+    const data = await response.json();
+    setPosts(data.payload)
+  }
+
+async function submitPost(text){
+  console.log(text)
+  const response = await fetch("http://localhost:3000/posts",
+  {
+      "method": "POST",
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      "body": JSON.stringify({text: text})
+  })
+  console.log(response)
+  getPosts()
+}
+
 
 return <>
 
   <Nav showCreatePostModal={formShow}/>
-  <CreatePost show={showForm} onHide={formHide}/>
+  <CreatePost show={showForm} onHide={formHide} onSubmit={submitPost}/>
     <Container className="main">
                     <Quotes quote={latestQuote.current.quote} author={latestQuote.current.author}/>
 
   
-        <FeelingsCard classes="sb7 box3"/>
+        <FeelingsCard classes="sb7 box3" posts={posts}/>
    
    </Container>
       </>

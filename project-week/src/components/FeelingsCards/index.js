@@ -4,7 +4,7 @@ import './index.css'
 function FeelingsCard({classes, posts}) {
 
 
-   { const cards = posts.map((post)=>{
+    const cards = posts.map((post)=>{
         return <div key={post.id}>
         <p className={classes} > 
         {post.text}
@@ -16,7 +16,7 @@ function FeelingsCard({classes, posts}) {
     })
 
     return cards;
-}
+
 
 
 }

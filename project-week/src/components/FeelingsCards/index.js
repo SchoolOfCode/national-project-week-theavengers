@@ -1,17 +1,22 @@
 
 import './index.css'
 
-function FeelingsCard({classes}) {
+function FeelingsCard({classes, posts}) {
 
-    return <div>
+
+    const cards = posts.map((post)=>{
+        return <div key={post.id}>
         <p className={classes} > 
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-        Donec quam felis, ultricies nec, pellentesque eu
-        <br/><span className='timestamp'>10:24 17th Jan 2022</span>
+        {post.text}
+        <br/><span className='timestamp'>{post.timestamp}</span>
         </p>
 
     </div>
+
+    })
+
+    return cards;
+
 
 
 }

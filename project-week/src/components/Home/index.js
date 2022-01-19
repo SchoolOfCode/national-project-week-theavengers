@@ -1,4 +1,4 @@
-import {Col, Row, Container} from 'react-bootstrap'
+import {Container} from 'react-bootstrap'
 import Quotes from "../Quotes"
 import FeelingsCard from '../FeelingsCards';
 import CreatePost from '../CreatePost'

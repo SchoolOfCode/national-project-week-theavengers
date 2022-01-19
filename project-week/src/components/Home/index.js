@@ -1,10 +1,10 @@
-import {Col, Row} from 'react-bootstrap'
+import {Container} from 'react-bootstrap'
 import Quotes from "../Quotes"
 import FeelingsCard from '../FeelingsCards';
 import CreatePost from '../CreatePost'
 import Nav from '../Nav'
 import {useEffect, useState, useRef} from "react";
-
+import './index.css'
 
 function Home() {
 
@@ -25,7 +25,7 @@ function Home() {
           "x-rapidapi-key": process.env.REACT_APP_KEY
         }})
       const data = await response.json();
-      setQuote(latestQuote.current = data.quote)
+      setQuote(latestQuote.current = data)
       console.log(latestQuote.current)
       return data
     }
@@ -33,16 +33,16 @@ function Home() {
   }, [])
 
 return <>
+
   <Nav showCreatePostModal={formShow}/>
   <CreatePost show={showForm} onHide={formHide}/>
-      <Row>
-        <Col> 
-          <Quotes quote={latestQuote.current} />
-        </Col>
-      </Row>
-      <Row>
+    <Container className="main">
+                    <Quotes quote={latestQuote.current.quote} author={latestQuote.current.author}/>
+
+  
         <FeelingsCard classes="sb7 box3"/>
-      </Row>
+   
+   </Container>
       </>
 }
 

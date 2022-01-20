@@ -1,6 +1,5 @@
 import {Button, Modal} from 'react-bootstrap'
 import "./index.css";
-import $ from 'jquery';
 import {useState} from 'react';
 
 const maxCharSize = 240;
@@ -30,26 +29,12 @@ if(charsRemaining === 1){
 }
 
 function handleBlur(e){
-  
-  if($("#submit").data("mouseDown") !== true){
     setCharsRemHide(true)
-}
-
 }
 
 function handleSelect(e){
   if(e.target.value.length >= 1)  setCharsRemHide(false)
 }
-
-
-$("#submit").on("mousedown", function(e){
-  $("#submit").data("mouseDown", true);
-});
-
-$("#submit").on("mouseup", function(e){
-  $("#submit").data("mouseDown", false);
-});
-
 
     return (
 <>
@@ -73,7 +58,6 @@ $("#submit").on("mouseup", function(e){
           <Button variant="primary" id="submit" onClick={()=>{
             onSubmit(inputText)
             onHide()
-            setCharsRemHide(true)
           }}>
             Submit
           </Button>

@@ -23,11 +23,11 @@ input{
     width: var(--card-components-width)
 }
 
-.modal-body{
+#login-modal-body{
     padding: 6em 0;
 }
 
-.modal-body *, .modal-footer * {
+#login-modal-body *, #login-modal-footer * {
     width: var(--card-components-width);
     padding: 0.5em 0;
 }

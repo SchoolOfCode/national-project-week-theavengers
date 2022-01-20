@@ -30,7 +30,7 @@ function Login() {
             <Modal.Title>Log in</Modal.Title>
             </Modal.Header>
 
-            <Modal.Body>
+            <Modal.Body id="login-modal-body">
                             <input type="email" placeholder="Enter Email"></input>
                             <input type="password" placeholder="Enter Password"></input>
                             <input type="password" placeholder="Login"></input>

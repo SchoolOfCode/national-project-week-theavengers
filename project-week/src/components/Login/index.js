@@ -1,13 +1,38 @@
-import NavBar from "../Nav";
-import {Col, Row, Container, Card, Button, Modal} from 'react-bootstrap'
+import {Col, Row, Container, Button, Modal} from 'react-bootstrap'
 import './index.css'
-import { useEffect, useState } from "react";
 import Logo from '../../os-logo.png'
-import refs from '../../mock-ref.js'
+import {NavLink} from 'react-router-dom'
+import {useState} from 'react'
 
 function Login() {
 
+    const [formInfo, setFormInfo] = useState({email: "", password: ""})
 
+    function handleLogin(){
+        
+    }
+
+    function handleEmailChange(event){
+        setFormInfo({email: event.target.value})
+    }
+
+    function handlePasswordChange(event){
+        setFormInfo({password: event.target.value})
+    }
+
+    async function registerUser(email, password){
+       
+        const response = await fetch("http://localhost:3000/signup",
+        {
+            "method": "POST",
+            headers: {
+              'Content-Type': 'application/json'
+              // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            "body": JSON.stringify({email: email, password: password})
+        })
+        console.log(response)
+      }
 
     return <>
   <img id="logo" src={Logo} width="150" height="150" alt="" /> 
@@ -31,14 +56,15 @@ function Login() {
             </Modal.Header>
 
             <Modal.Body id="login-modal-body">
-                            <input type="email" placeholder="Enter Email"></input>
-                            <input type="password" placeholder="Enter Password"></input>
-                            <input type="password" placeholder="Login"></input>
-                            <Button variant="primary">Log in</Button>
+                            <input className="login-input" type="email" onChange={handleEmailChange} placeholder="Enter Email"></input>
+                            <input className="login-input" type="password" onChange={handlePasswordChange} placeholder="Enter Password"></input>
+                            <Button className="login-input" variant="primary" onClick={handleLogin}>Log in</Button>
             </Modal.Body>
 
-            <Modal.Footer className="d-flex justify-content-center">
-            <Button variant="primary">Sign up?</Button>
+            <Modal.Footer id="login-modal-footer" className="d-flex justify-content-center">
+
+            <Button variant="secondary" onClick={() => { registerUser(formInfo.email, formInfo.password)}}><NavLink style={{color: "white", textDecoration: "none"}} 
+          to="/Register">Sign Up</NavLink></Button>
             </Modal.Footer>
             </Modal.Dialog>
 

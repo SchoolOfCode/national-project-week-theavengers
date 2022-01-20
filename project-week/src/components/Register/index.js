@@ -4,11 +4,14 @@ import Logo from '../../os-logo.png'
 import {NavLink} from 'react-router-dom'
 import {useState} from 'react'
 
-function Login() {
+
+function Register() {
 
     const [formInfo, setFormInfo] = useState({})
 
-    function handleLogin(){
+    
+
+    function handleRegister(){
         
     }
 
@@ -30,19 +33,19 @@ function Login() {
             <Modal.Dialog className="w-75" id="signup-form" >
             <Modal.Header >
 
-            <Modal.Title>Log in</Modal.Title>
+            <Modal.Title>Register</Modal.Title>
             </Modal.Header>
 
             <Modal.Body id="login-modal-body">
                             <input className="login-input" type="email" placeholder="Enter Email"></input>
                             <input className="login-input" type="password" placeholder="Enter Password"></input>
-                            <Button className="login-input" variant="primary" onClick={handleLogin}>Log in</Button>
+                            <input className="login-input" type="password" placeholder="Confirm Password"></input>
+                            <Button className="login-input" variant="primary" onClick={handleRegister}>Register</Button>
             </Modal.Body>
 
             <Modal.Footer id="login-modal-footer" className="d-flex justify-content-center">
-
             <Button variant="secondary"><NavLink style={{color: "white", textDecoration: "none"}} 
-          to="/Register">Sign Up</NavLink></Button>
+          to="/Login">Login</NavLink></Button>
             </Modal.Footer>
             </Modal.Dialog>
 
@@ -58,4 +61,4 @@ function Login() {
    
 }
 
-export default Login;
+export default Register;

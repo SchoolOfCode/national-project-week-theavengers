@@ -26,6 +26,13 @@ export async function deletePostById(requestId){
         return data.rows
     }
 
+ // Reflections Models
+
+export async function getReflectionsByUserId(userId) {
+    const data = await query(`SELECT * FROM ReflectionsTable WHERE user_id=$1 ,[userId]`)
+    return data.rows;
+}
+
 
 
 

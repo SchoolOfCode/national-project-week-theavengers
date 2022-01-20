@@ -33,6 +33,6 @@
 
 .bg-primary {
     --bs-bg-opacity: 1;
-    background-color: rgba(var(--glaucous), var(--bs-bg-opacity))!important;
+    background-color: #265F7A !important;
 }
 

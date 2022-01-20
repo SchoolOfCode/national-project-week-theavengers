@@ -22,3 +22,14 @@
     align-self: flex-end;
     font-family:'Courier New', Courier, monospace;
 }
+.heading {
+    font-family: 'dear-love';
+}
+
+.modal-title {
+    background-color: #FECA73;
+}
+@font-face {
+    font-family: 'dear-love';
+    src: url('../../Dearlove.ttf');
+}

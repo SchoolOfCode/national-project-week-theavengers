@@ -47,7 +47,7 @@ function Reflections({user_id}) {
         title="Hi Again!" description="Add a reflection of how your day has gone. Note down a few of your successes bla bla etc"/>
         <Row>
             <Col className="my-5">
-                <h1>My Reflections</h1>
+                <h1 className="heading">My Reflections</h1>
             <Container className="my-5 py-4 px-4 reflections">
                 <ul>
                 {reflections.map((ref)=> {

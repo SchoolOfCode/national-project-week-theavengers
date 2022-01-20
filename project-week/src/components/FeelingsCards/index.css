@@ -50,7 +50,7 @@ body{
 }
 
 .box:hover{
-  scale: 2;
+  scale: 2.5;
   z-index: 1;
   opacity: 1;
   box-shadow:

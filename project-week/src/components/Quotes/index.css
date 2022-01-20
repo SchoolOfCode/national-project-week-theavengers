@@ -1,21 +1,22 @@
 
 #quotebox {
-  
-    border-radius: 20px;
-    padding: 1.5em;
+    border-radius: 10px;
     line-height: 1.4;
-    font-size: 2em ;
-    background: rgb(219,206,214);
-    background: linear-gradient(153deg, rgba(219,206,214,1) 0%, rgba(108,139,180,1) 100%);
+    font-size: 2em ;;
+/* background: linear-gradient(153deg, rgba(219,206,214,1) 0%, #265F7A 100%); */
     font-weight: 600;
     color: white;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'gotham-medium';    
     display: flex;
     flex-direction: column;
     position: relative;
     z-index: 1;
-    margin-bottom: 4em;
-    box-shadow: 3px 3px 5px rgba(135, 135, 135, 0.6);
+    margin-bottom: 1em;
+    color: #265F7A;
+    width: 20%;
+    backdrop-filter: blur(6px);
+    font-style: italic;
+
 
   }
 
@@ -27,6 +28,5 @@
       font-size: 40%;
       height: 20%;
       align-self: flex-end;
-      font-style: italic;
       margin-top: 2em;
   }

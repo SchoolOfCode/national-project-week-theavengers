@@ -14,7 +14,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(208, 214, 223);
   background-image: url('./31082021-06_generated.png');
-  background-position: center center;
+  /* background-position: center center; */
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 code {

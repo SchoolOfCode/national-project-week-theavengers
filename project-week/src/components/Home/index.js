@@ -5,6 +5,7 @@ import CreatePost from '../CreatePost'
 import Nav from '../Nav'
 import {useEffect, useState, useRef} from "react";
 import './index.css'
+import Footer from '../Footer'
 
 const coloursArray = ['#E1E356', '#56E3D9',  '#63E356', '#E356D8', '#E35656']
 
@@ -92,8 +93,10 @@ return <>
       return  <FeelingsCard key={post.id} text={post.text} timestamp={post.timestamp} colour={getColour()} position={getRandomLocation()} num={index} classes={`box sb${n}`}/>
     })}
        
-   
+    
    </Container>
+   <Footer/>
+   
       </>
 }
 

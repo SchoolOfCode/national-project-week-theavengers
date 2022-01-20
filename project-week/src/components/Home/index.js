@@ -6,6 +6,16 @@ import Nav from '../Nav'
 import {useEffect, useState, useRef} from "react";
 import './index.css'
 
+//Generate random number for spawn position
+function randRange( minNum, maxNum) {
+  return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
+}
+
+function getRandomLocation(){
+  const posX = randRange(0,window.innerWidth-500);
+  const posY = randRange(0,window.innerHeight-500)
+}
+
 function Home() {
 
   const [quote, setQuote] = useState("")
@@ -65,7 +75,7 @@ return <>
                     <Quotes quote={latestQuote.current.quote} author={latestQuote.current.author}/>
 
   
-        <FeelingsCard classes="sb7 box3" posts={posts}/>
+        <FeelingsCard classes="sb7 box3" posts={posts} position={getRandomLocation()} num={index}/>
    
    </Container>
       </>

@@ -60,7 +60,9 @@ async function submitPost(text){
 return <>
 
   <Nav showCreatePostModal={formShow}/>
-  <CreatePost show={showForm} onHide={formHide} onSubmit={submitPost}/>
+  <CreatePost show={showForm} onHide={formHide} onSubmit={submitPost}
+    title="Hello!" description='How’s it going lately? Has the day been hard? If you’re finding things tough, that’s okay. You’re probably not alone. Use this space to air out your feelings. It’ll be completely anonymous, so go for it. After all, when has bottling your emotions ever helped?
+    Tell someone. Us, perhaps?'/>
     <Container className="main">
                     <Quotes quote={latestQuote.current.quote} author={latestQuote.current.author}/>
 

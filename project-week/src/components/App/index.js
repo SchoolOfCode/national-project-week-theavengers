@@ -4,6 +4,7 @@
 import './App.css';
 import Home from '../Home'
 import {Route, Routes} from 'react-router-dom'
+import Reflections from '../Reflections';
 
 //const api_url ="https://zenquotes.io/api/quotes/";
 // async function getapi(url)
@@ -27,7 +28,10 @@ function App() {
           path="/"
           element={<Home/>}
         />
-
+        <Route
+          path='/Reflections'
+          element={<Reflections/>}
+        />
       </Routes>
       </>
       </div>

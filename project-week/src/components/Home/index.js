@@ -6,6 +6,26 @@ import Nav from '../Nav'
 import {useEffect, useState, useRef} from "react";
 import './index.css'
 
+const coloursArray = ['#E1E356', '#56E3D9',  '#63E356', '#E356D8', '#E35656']
+
+//Generate random number for spawn position
+function randRange( minNum, maxNum) {
+  return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
+}
+
+function getRandomLocation(){
+  const posX = randRange(0,window.innerWidth-500);
+  const posY = randRange(0,window.innerHeight-500);
+   return {
+     x: posX,
+     y: posY
+    };
+  }
+
+  function getColour(){
+    return coloursArray[randRange(0, coloursArray.length-1)];
+  }
+
 function Home() {
 
   const [quote, setQuote] = useState("")
@@ -56,7 +76,6 @@ async function submitPost(text){
   getPosts()
 }
 
-
 return <>
 
   <Nav showCreatePostModal={formShow}/>
@@ -65,7 +84,12 @@ return <>
                     <Quotes quote={latestQuote.current.quote} author={latestQuote.current.author}/>
 
   
-        <FeelingsCard classes="sb7 box3" posts={posts}/>
+    {posts.map((post, index)=>{
+
+      let n = index % 2 === 0 ? 1 : 0;
+      return  <FeelingsCard key={post.id} text={post.text} timestamp={post.timestamp} colour={getColour()} position={getRandomLocation()} num={index} classes={`box sb${n}`}/>
+    })}
+       
    
    </Container>
       </>

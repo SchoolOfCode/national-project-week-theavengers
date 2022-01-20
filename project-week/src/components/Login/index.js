@@ -12,6 +12,16 @@ function Login() {
         
     }
 
+    function handleEmailChange(event){
+        alert(event.target.value)
+        setFormInfo({action: event.target.value})
+    }
+
+    function handlePasswordChange(event){
+        alert(event.target.value)
+
+    }
+
     return <>
   <img id="logo" src={Logo} width="150" height="150" alt="" /> 
      <Container>
@@ -34,8 +44,8 @@ function Login() {
             </Modal.Header>
 
             <Modal.Body id="login-modal-body">
-                            <input className="login-input" type="email" placeholder="Enter Email"></input>
-                            <input className="login-input" type="password" placeholder="Enter Password"></input>
+                            <input className="login-input" type="email" onChange={handleEmailChange} placeholder="Enter Email"></input>
+                            <input className="login-input" type="password" onChange={handlePasswordChange} placeholder="Enter Password"></input>
                             <Button className="login-input" variant="primary" onClick={handleLogin}>Log in</Button>
             </Modal.Body>
 

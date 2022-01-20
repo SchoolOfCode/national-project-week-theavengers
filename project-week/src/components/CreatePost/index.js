@@ -40,10 +40,10 @@ function handleSelect(e){
     return (
 <>
       <Modal id="modal" show={show} onHide={onHide}>
-        <Modal.Header closeButton>
+        <Modal.Header id="create-modal-header" closeButton>
           <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body className="my-2">
+        <Modal.Body id="create-modal-body" className="my-2">
           <p>{description}</p>
           <textarea placeholder="Write a message anonymously..." onBlur={handleBlur} onSelect={handleSelect} onChange={handleChange} className="textarea" maxLength="240" cols="40" rows="6">
           </textarea>

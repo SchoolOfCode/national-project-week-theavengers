@@ -35,7 +35,7 @@ function calcSpeed(prev, next) {
 
     var greatest = x > y ? x : y;
 
-    var speedModifier = 0.1;
+    var speedModifier = 0.05;
 
     var speed = Math.ceil(greatest/speedModifier);
 
@@ -43,29 +43,33 @@ function calcSpeed(prev, next) {
 
 }
 
-function FeelingsCard({date, text, position, num}) {
+function FeelingsCard({text, timestamp, colour, position, num, classes}) {
 
-    const [pos, setPos] = useState(position)
+
+    const [pos] = useState(position)
+    const [initialColour] = useState(colour)
 
     useEffect(()=>{
         animateDiv(num);
-    },[])
+    },[num])
 
 
-    const cards = posts.map((post)=>{
-        return <div key={post.id}>
-        <p className={classes} > 
-        {post.text}
-        <br/><span className='timestamp'>{post.timestamp}</span>
+
+        return <div>
+        <p 
+        className={classes} 
+        id={num} 
+        style={
+            {
+                left:pos.x, 
+                top:pos.y,
+                backgroundColor: initialColour
+            }}> 
+        {text}
+        <br/><span className='timestamp'>{timestamp}</span>
         </p>
 
     </div>
-
-    })
-
-    return cards;
-
-
 
 }
 

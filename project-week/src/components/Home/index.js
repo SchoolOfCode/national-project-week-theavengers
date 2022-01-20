@@ -6,6 +6,26 @@ import Nav from '../Nav'
 import {useEffect, useState, useRef} from "react";
 import './index.css'
 
+const coloursArray = ['#E1E356', '#56E3D9',  '#63E356', '#E356D8', '#E35656']
+
+//Generate random number for spawn position
+function randRange( minNum, maxNum) {
+  return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
+}
+
+function getRandomLocation(){
+  const posX = randRange(0,window.innerWidth-500);
+  const posY = randRange(0,window.innerHeight-500);
+   return {
+     x: posX,
+     y: posY
+    };
+  }
+
+  function getColour(){
+    return coloursArray[randRange(0, coloursArray.length-1)];
+  }
+
 function Home() {
 
   const [quote, setQuote] = useState("")
@@ -55,16 +75,22 @@ async function submitPost(text){
   getPosts()
 }
 
-
 return <>
 
   <Nav showCreatePostModal={formShow}/>
-  <CreatePost show={showForm} onHide={formHide} onSubmit={submitPost}/>
+  <CreatePost show={showForm} onHide={formHide} onSubmit={submitPost}
+    title="Hello!" description='How’s it going lately? Has the day been hard? If you’re finding things tough, that’s okay. You’re probably not alone. Use this space to air out your feelings. It’ll be completely anonymous, so go for it. After all, when has bottling your emotions ever helped?
+    Tell someone. Us, perhaps?'/>
     <Container className="main">
                     <Quotes quote={latestQuote.current.quote} author={latestQuote.current.author}/>
 
   
-        <FeelingsCard classes="sb7 box3" posts={posts}/>
+    {posts.map((post, index)=>{
+
+      let n = index % 2 === 0 ? 1 : 0;
+      return  <FeelingsCard key={post.id} text={post.text} timestamp={post.timestamp} colour={getColour()} position={getRandomLocation()} num={index} classes={`box sb${n}`}/>
+    })}
+       
    
    </Container>
       </>

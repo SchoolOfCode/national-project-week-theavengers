@@ -6,21 +6,33 @@ import {useState} from 'react'
 
 function Login() {
 
-    const [formInfo, setFormInfo] = useState({})
+    const [formInfo, setFormInfo] = useState({email: "", password: ""})
 
     function handleLogin(){
         
     }
 
     function handleEmailChange(event){
-        alert(event.target.value)
-        setFormInfo({action: event.target.value})
+        setFormInfo({email: event.target.value})
     }
 
     function handlePasswordChange(event){
-        alert(event.target.value)
-
+        setFormInfo({password: event.target.value})
     }
+
+    async function registerUser(email, password){
+       
+        const response = await fetch("http://localhost:3000/signup",
+        {
+            "method": "POST",
+            headers: {
+              'Content-Type': 'application/json'
+              // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            "body": JSON.stringify({email: email, password: password})
+        })
+        console.log(response)
+      }
 
     return <>
   <img id="logo" src={Logo} width="150" height="150" alt="" /> 
@@ -51,7 +63,7 @@ function Login() {
 
             <Modal.Footer id="login-modal-footer" className="d-flex justify-content-center">
 
-            <Button variant="secondary"><NavLink style={{color: "white", textDecoration: "none"}} 
+            <Button variant="secondary" onClick={() => { registerUser(formInfo.email, formInfo.password)}}><NavLink style={{color: "white", textDecoration: "none"}} 
           to="/Register">Sign Up</NavLink></Button>
             </Modal.Footer>
             </Modal.Dialog>

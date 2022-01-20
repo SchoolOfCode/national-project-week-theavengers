@@ -7,6 +7,7 @@ import {useEffect, useState, useRef} from "react";
 import './index.css'
 
 const coloursArray = ['#E1E356', '#56E3D9',  '#63E356', '#E356D8', '#E35656']
+const cardsToRender = 5;
 
 //Generate random number for spawn position
 function randRange( minNum, maxNum) {
@@ -85,7 +86,7 @@ return <>
 
   
     {posts.map((post, index)=>{
-
+    if(index >= cardsToRender) return
       let n = index % 2 === 0 ? 1 : 0;
       return  <FeelingsCard key={post.id} text={post.text} timestamp={post.timestamp} colour={getColour()} position={getRandomLocation()} num={index} classes={`box sb${n}`}/>
     })}

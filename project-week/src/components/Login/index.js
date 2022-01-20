@@ -1,7 +1,8 @@
 import NavBar from "../Nav";
-import {Col, Row, Container, Card, Button} from 'react-bootstrap'
+import {Col, Row, Container, Card, Button, Modal} from 'react-bootstrap'
 import './index.css'
 import { useEffect, useState } from "react";
+import Logo from '../../os-logo.png'
 import refs from '../../mock-ref.js'
 
 function Login() {
@@ -9,26 +10,45 @@ function Login() {
 
 
     return <>
-     <NavBar/>
+  <img id="logo" src={Logo} width="150" height="150" alt="" /> 
+     <Container>
+     
         <Row>
+
             <Col className="my-5">
+                
+                <Container id="header">
+
+                <h1>The Open Space</h1>
+                
+                <h5 className="w-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h5>
+
+                </Container>
+            <Modal.Dialog className="w-75" id="signup-form" >
+            <Modal.Header >
+
+            <Modal.Title>Log in</Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+                            <input type="email" placeholder="Enter Email"></input>
+                            <input type="password" placeholder="Enter Password"></input>
+                            <input type="password" placeholder="Login"></input>
+                            <Button variant="primary">Log in</Button>
+            </Modal.Body>
+
+            <Modal.Footer className="d-flex justify-content-center">
+            <Button variant="primary">Sign up?</Button>
+            </Modal.Footer>
+            </Modal.Dialog>
 
 
-            <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-                <Card.Title><h1 className="heading">Login</h1></Card.Title>
-                <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-            </Card>
-
+        
             </Col>
-        </Row>
 
+        </Row>
+        
+        </Container>
     </>
     
    

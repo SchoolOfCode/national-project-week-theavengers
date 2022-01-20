@@ -1,0 +1,33 @@
+:root{
+    --card-components-width: 250px; 
+}
+#logo{
+    position: absolute;
+    left: 0;
+    margin: 2em;
+}
+
+#header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    padding: 2em;
+    margin-top: 3em;
+}
+
+input{
+    padding: 0.25em;
+    text-align: center;
+    width: var(--card-components-width)
+}
+
+.modal-body{
+    padding: 6em 0;
+}
+
+.modal-body *, .modal-footer * {
+    width: var(--card-components-width);
+    padding: 0.5em 0;
+}

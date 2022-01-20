@@ -47,7 +47,7 @@
 
         - A User can see the results of their problem displayed on a page
             Each post contains a random avatar - Locate random avatar generator API
-        
+        - Link to figma High-Fidelity Wire-Frame https://www.figma.com/file/jpnrJGKRqrkVYssGiLlbbJ/OPEN-SPACE-HI%2FFI-WIRE-FRAME?node-id=0%3A357
        
 
         

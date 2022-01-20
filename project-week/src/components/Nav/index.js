@@ -23,9 +23,6 @@ return (
           to="/">Home</NavLink>
     <NavLink id="RouterNavLink" className={isActive => "nav-link" + (!isActive ? " unselected" : "")} 
           to="/Reflections">Reflections</NavLink>
-    <NavLink id="RouterNavLink" className={isActive => "nav-link" + (!isActive ? " unselected" : "")} 
-          to="/Login">Login</NavLink>
-
     </Nav>
 
     <Button onClick={showCreatePostModal} variant="success">Create</Button>

@@ -89,7 +89,6 @@ return <>
   
 
   {posts.map((post, index)=>{
-  if(index >= postsToDisplay) { return}
   let n = index % 2 === 0 ? 1 : 0;
   return  <FeelingsCard key={post.id} text={post.text} timestamp={post.timestamp} colour={getColour()} position={getRandomLocation()} num={index} classes={`box sb${n}`}/>
   })}

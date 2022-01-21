@@ -17,7 +17,20 @@ router.post("/", async function(req,res){
     
   })
 
+
+
 router.get("/",  async function (req, res) {
+    console.log(req)
+    if( req.query) {
+        const found = await getUserByEmail(req.query.email);
+        console.log(found)
+    if(found.password === req.query.password) {
+        res.json({ 'success': true, 'payload': found });
+    } else {
+        res.status(422).json({message: "Invalid username or password"})
+    }
+    return
+    }
   const allUsers = await getUsers();
   res.json({ 'success': true, 'payload': allUsers });
 });
@@ -31,17 +44,6 @@ router.get("/:id", async function(req,res){
   res.json({ 'success': true, 'payload': found });
 })
 
-
-router.get("/?email=", async function(req,res){
-    //Get user by Email
-    const found = await getUserByEmail(req.query.email);
-    if(found.password === req.query.password) {
-        res.json({ 'success': true, 'payload': found });
-    } else {
-        res.status(422).json({message: "Invalid username or password"})
-    }
-   
-  })
 
 router.delete("/:id",async function(req,res){
   //Delete user by Id

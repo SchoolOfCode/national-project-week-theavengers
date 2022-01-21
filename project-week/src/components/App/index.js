@@ -28,8 +28,8 @@ function App() {
   async function handleLogin(formInfo){
      
       let {email, password} = formInfo
-      if(password !== undefined) {
-          const response = await fetch(`/signup/?email=${email}`)
+      if(password != undefined) {
+          const response = await fetch(`http://localhost:3000/signup/?email=${email} `)
           const data = await response.json()
          setId(latest.current = data.payload[0].id)
           console.log(data.payload[0].id)
@@ -44,7 +44,7 @@ function App() {
       <>
         <Routes>
         <Route
-          path="/Home"
+          path="/"
           element={<Home/>}
         />
         <Route
@@ -52,7 +52,7 @@ function App() {
           element={<Reflections userid={latest.current}/>}
         />
       <Route
-          path='/'
+          path='/Login'
           element={<Login handleLogin={handleLogin} />}
         />
               <Route

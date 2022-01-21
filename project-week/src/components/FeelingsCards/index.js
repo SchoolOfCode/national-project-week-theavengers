@@ -9,7 +9,7 @@ import $ from 'jquery'
     var h = $(window).height() - 50;
     var w = $(window).width() - 50;
 
-    var nh = Math.floor(Math.random() * h);
+    var nh = Math.floor(Math.random() * h) + 50;
     var nw = Math.floor(Math.random() * w);
 
     return [nh,nw];    

@@ -64,7 +64,7 @@ function Register() {
 
                 <h1>The Open Space</h1>
                 
-                <h5 className="w-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h5>
+                <h5 className="w-50">Want to keep your posts so you can look back? Complete the sign-up process and you’ll gain access to everything you post moving forward. Sometimes, you need a little time to see your growth.</h5>
 
                 </Container>
             <Modal.Dialog className="w-75" id="signup-form" >
@@ -73,7 +73,7 @@ function Register() {
             <Modal.Title>Register</Modal.Title>
             </Modal.Header>
             <Modal.Body id="login-modal-body">
-            <h6>{responseMsg}</h6>
+            <h6 className='text-center'>{responseMsg}</h6>
 
                             <input className="login-input" type="email" placeholder="Enter Email" onChange={handleEmailChange} ></input>
                             <input className="login-input" type="password" placeholder="Enter Password" onChange={handlePasswordChange}></input>
@@ -84,7 +84,7 @@ function Register() {
 
             <Modal.Footer id="login-modal-footer" className="d-flex justify-content-center">
             <Button variant="secondary"><NavLink style={{color: "white", textDecoration: "none"}} 
-          to="/Login">Login</NavLink></Button>
+          to="/">Login</NavLink></Button>
             </Modal.Footer>
             </Modal.Dialog>
 

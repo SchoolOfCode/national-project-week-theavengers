@@ -1,4 +1,4 @@
-import query from "../db/db.js"
+import {query, close} from "../db/db.js";
 //
 // Put database queries here........... 
 // Get all posts

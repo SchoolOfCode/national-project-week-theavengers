@@ -1,5 +1,4 @@
-import query from "../db/db.js";
-
+import {query, close} from "../db/db.js";
 // Todo
 const data = [
     {

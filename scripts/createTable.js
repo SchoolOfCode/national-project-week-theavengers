@@ -1,5 +1,5 @@
 // Todo
-import query from "../db/db.js";
+import {query, close} from "../db/db.js";
 
 const sqlString = `CREATE TABLE IF NOT EXISTS PostTable (id SERIAL PRIMARY KEY, text TEXT, timestamp TEXT)`;
 

@@ -12,7 +12,7 @@ async function selectAll() {
 
 
 
-selectAll(); 
+// selectAll(); 
 
 async function deleteId(id){
     const res = await query(`DELETE FROM posttable where ID = $1 RETURNING *`,[id])
@@ -20,4 +20,4 @@ async function deleteId(id){
     console.log(res.rows)
 }
 
-//deleteId(12)
+//deleteId(13)

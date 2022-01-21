@@ -2,8 +2,9 @@ import {Col, Row, Container, Button, Modal} from 'react-bootstrap'
 import './index.css'
 import Logo from '../../os-logo.png'
 import {NavLink} from 'react-router-dom'
-import {useEffect, useState, useRef} from 'react'
 
+import Footer from '../Footer'
+import {useEffect, useState, useRef} from 'react'
 
 function Register() {
 
@@ -94,6 +95,8 @@ function Register() {
         </Row>
         
         </Container>
+        <Footer/>
+        
     </>
     
    

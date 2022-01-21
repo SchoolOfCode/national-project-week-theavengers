@@ -2,6 +2,8 @@ import {Col, Row, Container, Button, Modal} from 'react-bootstrap'
 import './index.css'
 import Logo from '../../os-logo.png'
 import {NavLink} from 'react-router-dom'
+
+import Footer from '../Footer'
 import {useState, useRef} from 'react'
 
 function Login() {
@@ -77,6 +79,7 @@ function Login() {
         </Row>
         
         </Container>
+        <Footer/>
     </>
     
    

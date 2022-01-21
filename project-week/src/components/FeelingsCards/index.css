@@ -1,9 +1,8 @@
+
 :root{
   --box-colour: rgb(204, 210, 218);
 }
-body{
-    overflow:hidden;
-  }
+
 .box {
   top: 0;
   left: 0;

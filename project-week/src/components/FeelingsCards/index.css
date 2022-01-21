@@ -1,9 +1,8 @@
+
 :root{
   --box-colour: rgb(204, 210, 218);
 }
-body{
-    overflow:hidden;
-  }
+
 .box {
   top: 0;
   left: 0;
@@ -21,8 +20,6 @@ body{
     font-size: 0.75em;
     overflow-wrap: anywhere;
     box-shadow: 3px 3px 5px var(--box-colour);
-    display: flex;
-    flex-direction: column;
 }
 
 .sb0:before{

@@ -5,8 +5,10 @@ import CreatePost from '../CreatePost'
 import Nav from '../Nav'
 import {useEffect, useState, useRef} from "react";
 import './index.css'
+import Footer from '../Footer'
 
-const coloursArray = ['#E1E356', '#56E3D9',  '#63E356', '#E356D8', '#E35656']
+const postsToDisplay = 6;
+const coloursArray = ['#E1E356', '#56E3D9',  '#63E356', '#E356D8', '#E35656', '#392f5aff', '#f7a9a8ff', '#e3b505ff', '#77a6b6ff', '#cee0dcff'];
 
 //Generate random number for spawn position
 function randRange( minNum, maxNum) {
@@ -14,8 +16,8 @@ function randRange( minNum, maxNum) {
 }
 
 function getRandomLocation(){
-  const posX = randRange(0,window.innerWidth-500);
-  const posY = randRange(0,window.innerHeight-500);
+  const posX = randRange(-50,window.innerWidth-100);
+  const posY = randRange(100,window.innerHeight-100);
    return {
      x: posX,
      y: posY
@@ -58,7 +60,7 @@ function Home() {
 async function getPosts(){
     const response = await fetch("/posts");
     const data = await response.json();
-    setPosts(data.payload)
+    setPosts(data.payload.sort(function(a, b){return 0.5 - Math.random()}))
   }
 
 async function submitPost(text){
@@ -82,17 +84,22 @@ return <>
     title="Hello!" description='How’s it going lately? Has the day been hard? If you’re finding things tough, that’s okay. You’re probably not alone. Use this space to air out your feelings. It’ll be completely anonymous, so go for it. After all, when has bottling your emotions ever helped?
     Tell someone. Us, perhaps?'/>
     <Container className="main">
-                    <Quotes quote={latestQuote.current.quote} author={latestQuote.current.author}/>
+    <Quotes quote={latestQuote.current.quote} author={latestQuote.current.author}/>
 
   
-    {posts.map((post, index)=>{
 
-      let n = index % 2 === 0 ? 1 : 0;
-      return  <FeelingsCard key={post.id} text={post.text} timestamp={post.timestamp} colour={getColour()} position={getRandomLocation()} num={index} classes={`box sb${n}`}/>
-    })}
+  {posts.map((post, index)=>{
+  if(index >= postsToDisplay) { return}
+  let n = index % 2 === 0 ? 1 : 0;
+  return  <FeelingsCard key={post.id} text={post.text} timestamp={post.timestamp} colour={getColour()} position={getRandomLocation()} num={index} classes={`box sb${n}`}/>
+  })}
+
+
        
-   
+    
    </Container>
+   <Footer/>
+   
       </>
 }
 

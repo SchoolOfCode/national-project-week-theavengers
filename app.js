@@ -7,6 +7,8 @@ import cors  from 'cors';
 import logger  from 'morgan';
 
 import postsRouter  from './routes/posts.js';
+import authRouter from './routes/authRoutes.js'
+
 
 const app = express();
 
@@ -18,6 +20,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "./project-week/build")));
 
 app.use('/posts', postsRouter);
+app.use('/signup', authRouter);
 
 app.use(function (req, res, next) {
   res.status(404).json({message: "We couldn't find what you were looking for 😞"})

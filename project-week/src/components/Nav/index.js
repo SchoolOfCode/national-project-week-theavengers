@@ -13,16 +13,21 @@ return (
 <Navbar bg="primary" variant="dark">
     <Container>
 
-    <Navbar.Brand href="/">
+    <Navbar.Brand href="/Home">
    <img src={Logo} width="75" height="75" style={{position: 'relative'}} alt="" /> 
     </Navbar.Brand>
 
     <Nav className="me-auto">
 
     <NavLink id="RouterNavLink" className={isActive => "nav-link" + (!isActive ? " unselected" : "")} 
-          to="/">Home</NavLink>
+          to="/Home">Home</NavLink>
     <NavLink id="RouterNavLink" className={isActive => "nav-link" + (!isActive ? " unselected" : "")} 
           to="/Reflections">Reflections</NavLink>
+    <NavLink id="RouterNavLink" className={isActive => "nav-link" + (!isActive ? " unselected" : "")} 
+          to="/">Login</NavLink>
+     <NavLink id="RouterNavLink" className={isActive => "nav-link" + (!isActive ? " unselected" : "")} 
+          to="/Register">Register</NavLink>
+
     </Nav>
 
     <Button onClick={showCreatePostModal} variant="success">Create</Button>

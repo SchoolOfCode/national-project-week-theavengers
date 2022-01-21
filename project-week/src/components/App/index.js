@@ -27,7 +27,7 @@ function App() {
       <>
         <Routes>
         <Route
-          path="/"
+          path="/Home"
           element={<Home/>}
         />
         <Route
@@ -35,7 +35,7 @@ function App() {
           element={<Reflections/>}
         />
       <Route
-          path='/Login'
+          path='/'
           element={<Login/>}
         />
               <Route

@@ -12,6 +12,7 @@ export async function getUserById(userId){
 
 export async function getUserByEmail(email) {
     const data = await query(`SELECT * FROM UserTable WHERE email=$1`, [email])
+    console.log(data)
     return data.rows
 }
 

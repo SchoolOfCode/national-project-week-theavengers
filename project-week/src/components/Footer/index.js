@@ -19,8 +19,8 @@ import "./index.css";
             <h6>Meet the Team</h6>
             <ul class="footer-links">
               <li><a href="https://www.linkedin.com/in/sareena-naser">Sareena Naser</a></li>
-              <li><a href="http://scanfcode.com/category/front-end-development/">Laurence Nunn</a></li>
-              <li><a href="http://scanfcode.com/category/back-end-development/">Ilham Abdi</a></li>
+              <li><a href="https://www.linkedin.com/in/laurence-nunn-11504620b/">Laurence Nunn</a></li>
+              <li><a href="https://www.linkedin.com/in/ilham-abdi-95b723170/">Ilham Abdi</a></li>
               <li><a href="https://www.linkedin.com/in/ijaz-driscoll-9709541b9/">Ijaz Driscoll</a></li>
             </ul>
           </div>

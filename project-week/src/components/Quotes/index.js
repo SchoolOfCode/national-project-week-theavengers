@@ -8,7 +8,7 @@ function Quotes({quote, author}){
       </Row>
       <Row>
       <Col id="quotebox">
-            <h3>{quote}</h3> 
+            <h3>"{quote}"</h3> 
             <p className="author">- {author}</p>
           </Col>
       </Row>

@@ -5,8 +5,8 @@ import './index.css'
 import { useEffect, useState } from "react";
 import refs from '../../mock-ref.js'
 
-function Reflections({user_id}) {
-
+function Reflections({userid}) {
+console.log(userid)
 
   const [showForm, setShowForm] = useState(false)
 
@@ -15,9 +15,9 @@ function Reflections({user_id}) {
 
     const [reflections, setReflections] = useState([])
 
-    async function submitPost(text, user_id){
+    async function submitPost(text, userid){
         console.log(text)
-        const response = await fetch(`http://localhost:3000/Reflections:${user_id}`,
+        const response = await fetch(`http://localhost:3000/posts`,
         {
             "method": "POST",
             headers: {
@@ -27,16 +27,15 @@ function Reflections({user_id}) {
             "body": JSON.stringify({text: text})
         })
         console.log(response)
-        getReflectionsByUserId(user_id)
+        getReflectionsByUserId(userid)
       }
 
     useEffect(() => {
-       // getReflectionsByUserId(user_id)
        setReflections(refs)
     },[])
     
-    async function getReflectionsByUserId(id){
-        const response = await fetch(`http://localhost:3000/Reflections:${user_id}`);
+    async function getReflectionsByUserId(userid){
+        const response = await fetch(`http://localhost:3000/posts/:${userid}`);
         const data = await response.json();
         setReflections(data.payload)
       }

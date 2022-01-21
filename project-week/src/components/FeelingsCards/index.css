@@ -20,8 +20,6 @@
     font-size: 0.75em;
     overflow-wrap: anywhere;
     box-shadow: 3px 3px 5px var(--box-colour);
-    display: flex;
-    flex-direction: column;
 }
 
 .sb0:before{

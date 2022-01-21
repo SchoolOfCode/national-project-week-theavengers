@@ -4,7 +4,7 @@ import {useState} from 'react';
 
 const maxCharSize = 240;
 
-function CreatePost({show, onHide, onSubmit}){
+function CreatePost({show, onHide, onSubmit, description, title}){
 
   const [charsRem, setCharsRem] = useState(240)
   const [charsRemHide, setCharsRemHide] = useState(true)
@@ -40,12 +40,11 @@ function handleSelect(e){
     return (
 <>
       <Modal id="modal" show={show} onHide={onHide}>
-        <Modal.Header closeButton>
-          <Modal.Title>Hello!</Modal.Title>
+        <Modal.Header id="create-modal-header" closeButton>
+          <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body className="my-2">
-          <p>How’s it going lately? Has the day been hard? If you’re finding things tough, that’s okay. You’re probably not alone. Use this space to air out your feelings. It’ll be completely anonymous, so go for it. After all, when has bottling your emotions ever helped?
-          Tell someone. Us, perhaps?</p>
+        <Modal.Body id="create-modal-body" className="my-2">
+          <p>{description}</p>
           <textarea placeholder="Write a message anonymously..." onBlur={handleBlur} onSelect={handleSelect} onChange={handleChange} className="textarea" maxLength="240" cols="40" rows="6">
           </textarea>
           <h6 hidden={charsRemHide} className="m-2 text-muted">{charsRem} </h6>

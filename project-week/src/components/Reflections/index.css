@@ -1,0 +1,35 @@
+.reflections {
+    background-color: rgb(238, 236, 236);
+    border-radius: 15px;
+    min-height: 30vh
+}
+
+.ref-list {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgb(98, 101, 106, 0.48);
+    margin-bottom: 2em
+}
+
+.ref {
+    list-style: none;
+    align-self: flex-start;
+    font-size: 140%;
+    text-align: left;
+}
+
+.ref-time {
+    align-self: flex-end;
+    font-family:'Courier New', Courier, monospace;
+}
+.heading {
+    font-family: 'dear-love';
+}
+
+.modal-title {
+    background-color: #FECA73;
+}
+@font-face {
+    font-family: 'dear-love';
+    src: url('../../Dearlove.ttf');
+}

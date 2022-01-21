@@ -1,5 +1,6 @@
 import {Navbar, Container, Nav, Button} from  'react-bootstrap'
 // import {useState} from 'react'
+import Logo from '../../os-logo.png'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {NavLink} from 'react-router-dom'
@@ -13,7 +14,7 @@ return (
     <Container>
 
     <Navbar.Brand href="/">
-  {/* <img src={Logo} width="180" height="180" style={{position: 'absolute'}} alt="" /> */}
+   <img src={Logo} width="75" height="75" style={{position: 'relative'}} alt="" /> 
     </Navbar.Brand>
 
     <Nav className="me-auto">
@@ -22,7 +23,10 @@ return (
           to="/">Home</NavLink>
     <NavLink id="RouterNavLink" className={isActive => "nav-link" + (!isActive ? " unselected" : "")} 
           to="/Reflections">Reflections</NavLink>
-
+    <NavLink id="RouterNavLink" className={isActive => "nav-link" + (!isActive ? " unselected" : "")} 
+          to="/">Login</NavLink>
+     <NavLink id="RouterNavLink" className={isActive => "nav-link" + (!isActive ? " unselected" : "")} 
+          to="/Register">Register</NavLink>
 
     </Nav>
 

@@ -41,4 +41,14 @@ router.delete("/:id",async function(req,res){
 })
 
 
+//Reflections routes
+router.get("/Reflections:id",async function(req,res){
+  //Get Post by user ID
+  // get the id out of the url as a number
+  const id = Number(req.params.id);
+  // get a post with that id
+  const found = await getReflectionsByUserId(id);
+  res.json({ 'success': true, 'payload': found });
+})
+
 export default router;

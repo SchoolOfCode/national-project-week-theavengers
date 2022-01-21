@@ -13,10 +13,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(208, 214, 223);
-  background-image: url('./31082021-06_generated.png');
-  /* background-position: center center; */
-  background-size: contain;
-  background-repeat: no-repeat;
+  background: url('./31082021-06_generated.png');
+  background-size: 100% 100%;
 }
 
 code {

@@ -1,4 +1,4 @@
-import {query} from "../db/db.js"
+import {query, close} from "../db/db.js";
 //
 // Put database queries here........... 
 // Get all posts
@@ -25,13 +25,6 @@ export async function deletePostById(requestId){
         const data = await query(`UPDATE PostTable SET text= $1, timestamp=$2 WHERE id=requestId, [newcard.text,newcard.timestamp]`)
         return data.rows
     }
-
- // Reflections Models
-
-export async function getReflectionsByUserId(userId) {
-    const data = await query(`SELECT * FROM ReflectionsTable WHERE user_id=$1 ,[userId]`)
-    return data.rows;
-}
 
 
 

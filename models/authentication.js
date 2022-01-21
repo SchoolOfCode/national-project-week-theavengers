@@ -1,4 +1,4 @@
-import query from "../db/db.js"
+import {query} from "../db/db.js"
 
 export async function getUsers(){
     const data = await query(`SELECT * FROM UserTable` );

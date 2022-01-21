@@ -44,7 +44,7 @@ function App() {
       <>
         <Routes>
         <Route
-          path="/Home"
+          path="/"
           element={<Home/>}
         />
         <Route
@@ -52,7 +52,7 @@ function App() {
           element={<Reflections userid={latest.current}/>}
         />
       <Route
-          path='/'
+          path='/Login'
           element={<Login handleLogin={handleLogin} />}
         />
               <Route

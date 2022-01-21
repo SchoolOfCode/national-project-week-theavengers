@@ -20,11 +20,11 @@ return (
     <Nav className="me-auto">
 
     <NavLink id="RouterNavLink" className={isActive => "nav-link" + (!isActive ? " unselected" : "")} 
-          to="/Home">Home</NavLink>
+          to="/">Home</NavLink>
     <NavLink id="RouterNavLink" className={isActive => "nav-link" + (!isActive ? " unselected" : "")} 
           to="/Reflections">Reflections</NavLink>
     <NavLink id="RouterNavLink" className={isActive => "nav-link" + (!isActive ? " unselected" : "")} 
-          to="/">Login</NavLink>
+          to="/Login">Login</NavLink>
      <NavLink id="RouterNavLink" className={isActive => "nav-link" + (!isActive ? " unselected" : "")} 
           to="/Register">Register</NavLink>
 

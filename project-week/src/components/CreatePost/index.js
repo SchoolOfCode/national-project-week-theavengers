@@ -54,6 +54,7 @@ function handleSelect(e){
             Close
           </Button>
           <Button variant="primary" onClick={()=>{
+            if(inputText.length === 0) return
             onSubmit(inputText)
             onHide()
           }}>

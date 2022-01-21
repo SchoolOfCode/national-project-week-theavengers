@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import refs from '../../mock-ref.js'
 import Footer from "../Footer"
 
+
 function Reflections({userid}) {
 console.log(userid)
 
